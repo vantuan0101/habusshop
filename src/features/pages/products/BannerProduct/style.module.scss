@@ -1,0 +1,62 @@
+@import "../../../../assets/scss/importAll";
+
+.products {
+    &_card {
+      width: 100%;
+      height: 300px;
+      padding: 20px 0;
+      background-color: #83e0ea;
+      border-radius: 25px;
+      
+      color: white;
+      position: relative;
+      // @include desktop {
+      //   width: 350px;
+  
+      // }
+      &_heading {
+        position: relative;
+        top: 10%;
+      left: 10px;
+      width: 50%;
+        @include desktop {
+          top: 30%;
+            left: 13%;
+            width: 350px;
+  
+        }
+        & > h3 {
+          font-size: 30px;
+        }
+        & > p {
+          font-size: 20px;
+        }
+      }
+      &_img {
+        & > img {
+          width: 100px;
+          @include desktop {
+            width: 150px;
+  
+          }
+          &:first-child {
+            position: absolute;
+            top: 10px;
+            right: 33px;
+          }
+          &:nth-child(2) {
+            position: absolute;
+            top: 25%;
+            right: 20%;
+          }
+          &:last-child {
+            position: absolute;
+            bottom: 20px;
+            right: 3%;
+          }
+        }
+      }
+    }
+  
+  
+  }

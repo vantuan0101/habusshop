@@ -1,0 +1,17 @@
+@import "../../../../assets/scss/importAll";
+
+.home {
+  // margin-top: 192px;
+  width: 100%;
+  overflow-x: hidden;
+  // margin-top: 75px;
+  padding-top: 75px;
+
+  @include desktop {
+    // margin-top: 153px;
+    padding-top: 153px;
+  }
+}
+
+
+

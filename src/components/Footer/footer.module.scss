@@ -1,0 +1,66 @@
+@import "../../assets/scss/breakpoint";
+@import "../../assets/scss/variable";
+
+.footer {
+  padding: 0 15px;
+  // margin-top: 100px;
+  padding-top: 100px;
+    background-color: #F7F7F7;
+  @include desktop {
+    height: 264px;
+  }
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 50%;
+  border-top: 1px solid gray;
+  flex-direction: column;
+  @include desktop {
+    flex-direction: row;
+  }
+  &_law {
+    display: flex;
+    padding: 10px 0;
+    &_pocy {
+      margin-left: 5px;
+      margin-right: 5px;
+    }
+  }
+  &_img {
+    width: 150px;
+    padding: 10px 0;
+  }
+  &_social {
+    display: flex;
+    padding: 10px 0;
+    flex-direction: column;
+    align-items: center;
+    @include desktop {
+      flex-direction: row;
+    }
+    & > div {
+      margin-left: 5px;
+      margin-right: 5px;
+      margin-bottom: 10px;
+      & > span {
+        margin-left: 5px;
+        margin-right: 5px;
+        font-size: 30px;
+      }
+    }
+  }
+  &_copyright {
+    text-align: center;
+    padding: 10px 0;
+    color: gray;
+    & > span {
+      color: black;
+    }
+  }
+  .social{
+    color : black;
+  }
+}

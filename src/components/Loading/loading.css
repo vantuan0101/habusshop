@@ -1,0 +1,105 @@
+
+
+
+.loader_wait {
+  font-family: "Crafty Girls", cursive;
+
+  padding: 3rem 1rem 0;
+  text-align: center;
+  line-height: 1.3;
+  letter-spacing: 4px;
+  font-size: 1.125em;
+}
+/******************************
+   * FLEXBOX STYLES
+   * ******************************/
+.dice {
+  display: flex;
+    justify-content: center;
+    width: 100vw;
+    height:50vh;
+    z-index: 100;
+    align-items: flex-end;
+    /* margin-top: 50%; */
+}
+
+.face {
+  display: flex;
+  width: 3rem;
+  height: 3rem;
+  margin: 0 0.7rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+  opacity: 0;
+}
+.dot {
+  width: 0.8rem;
+  height: 0.8rem;
+  background: #f44336;
+  border-radius: 50%;
+}
+.face:nth-child(1) {
+  border: 2px solid #f44336;
+  animation: waves 5s linear infinite;
+}
+.face:nth-child(1) .dot {
+  background: #f44336;
+}
+.face:nth-child(2) {
+  border: 2px solid #e91e63;
+  animation: waves 5s 0.2s linear infinite;
+}
+.face:nth-child(2) .dot {
+  background: #e91e63;
+}
+.face:nth-child(3) {
+  border: 2px solid #9c27b0;
+  animation: waves 5s 0.4s linear infinite;
+}
+.face:nth-child(3) .dot {
+  background: #9c27b0;
+}
+
+
+.first-face {
+  justify-content: center;
+  align-items: center;
+}
+
+.second-face {
+  justify-content: space-between;
+}
+.second-face .dot:last-of-type {
+  align-self: flex-end;
+}
+
+.third-face {
+  justify-content: space-between;
+}
+.third-face .dot:nth-child(2) {
+  align-self: center;
+}
+.third-face .dot:last-of-type {
+  align-self: flex-end;
+}
+
+
+/*******************************************************/
+
+@keyframes waves {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  4% {
+    transform: translateY(-25px);
+    opacity: 1;
+  }
+  8% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  70% {
+    opacity: 0;
+  }
+}
