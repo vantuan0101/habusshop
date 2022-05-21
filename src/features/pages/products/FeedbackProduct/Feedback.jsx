@@ -6,7 +6,7 @@ import Slider from 'react-slick';
 import feedback from './feedback.module.scss';
 
 const Feedback = () => {
-    const categoryList =[1,2,3,4,5]
+    const categoryList = [1, 2, 3, 4, 5];
     const settings = {
         dots: true,
         lazyLoad: true,
@@ -44,34 +44,33 @@ const Feedback = () => {
                     {categoryList ? <p>Speak for us</p> : <Skeleton width={100} />}
                 </div>
                 <Slider {...settings}>
-                    {categoryList &&
-                        categoryList.map((item,index) =>
-                            item ? (
-                                <div key={index} className={clsx(feedback.slider)}>
-                                    <div className={clsx(feedback.slider_items)}>
-                                        <div className={clsx(feedback.contain)}>
-                                            <div className={clsx(feedback.contain_header)}>
-                                                <p>A very satisfied customer</p>
-                                                <p>
-                                                    My order was delivered on time and the Peach Crown Royal was
-                                                    sufficient in quality
-                                                </p>
-                                                <p>Jash Doae</p>
-                                            </div>
-                                            <div className={clsx(feedback.contain_feed)}>
-                                                <div>
-                                                    <img src="https://picsum.photos/id/237/200/300" alt="lo" />
-                                                </div>
-                                                <p>Sazerac Sk</p>
-                                            </div>
+                    {categoryList.map((item, index) =>
+                        item ? (
+                            <div key={index} className={clsx(feedback.slider)}>
+                                <div className={clsx(feedback.slider_items)}>
+                                    <div className={clsx(feedback.contain)}>
+                                        <div className={clsx(feedback.contain_header)}>
+                                            <p>A very satisfied customer</p>
+                                            <p>
+                                                My order was delivered on time and the Peach Crown Royal was sufficient
+                                                in quality
+                                            </p>
+                                            <p>Jash Doae</p>
                                         </div>
-                                        {/*  */}
+                                        <div className={clsx(feedback.contain_feed)}>
+                                            <div>
+                                                <img src="https://picsum.photos/id/237/200/300" alt="lo" />
+                                            </div>
+                                            <p>Sazerac Sk</p>
+                                        </div>
                                     </div>
+                                    {/*  */}
                                 </div>
-                            ) : (
-                                <Skeleton height={350} />
-                            ),
-                        )}
+                            </div>
+                        ) : (
+                            <Skeleton height={350} />
+                        ),
+                    )}
                 </Slider>
             </div>
         </div>
