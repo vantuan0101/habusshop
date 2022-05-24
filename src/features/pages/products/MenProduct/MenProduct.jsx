@@ -1,17 +1,28 @@
+import categoryApi from "api/categoryApi";
 import clsx from "clsx";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Skeleton from "react-loading-skeleton";
-import "react-loading-skeleton/dist/skeleton.css";
-import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { fetchMenProductList } from "./categoryMenProductSlice";
+import "react-loading-skeleton/dist/skeleton.css";
 import products from "./menproduct.module.scss";
 const MenProduct = () => {
-  const {dataProduct } = useSelector((state)=> state.apiMenProduct)
-  const dispatch = useDispatch()
+
+  // const {dataProduct } = useSelector((state)=> state.apiMenProduct)
+  // const dispatch = useDispatch()
+  // useEffect(() => {
+  //   dispatch(fetchMenProductList())
+  // },[dispatch])
+
+  const [dataProduct, setDataProduct] = useState([]);
+
   useEffect(() => {
-    dispatch(fetchMenProductList())
-  },[dispatch])
+      const res = async () => {
+          const req = await categoryApi.getSpecific("men's%20clothing");
+          setDataProduct(req);
+      };
+      res();
+      // console.log('re-render');
+  }, []);
 
   return (
     <div className={clsx(products.men_pd)}>

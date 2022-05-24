@@ -1,18 +1,21 @@
+import productApi from "api/productsApi";
 import clsx from "clsx";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { AiOutlineArrowRight } from "react-icons/ai";
-import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { fetchProductPreview } from "./productPreviewSlice";
 import product from "./productReview.module.scss";
 
 const ProductReview = () => {
-
-  const dispatch = useDispatch()
-  const {dataProduct} = useSelector((state)=> state.apiProductPreview)
+const [dataProduct , setDataProduct] =useState ([])
   useEffect(() => {
-    dispatch(fetchProductPreview(5))
-  },[dispatch])
+    const res = async () => {
+      const req = await productApi.getLimit(5)
+      setDataProduct(req)
+
+    }
+    res()
+    // console.log('re-render');
+  },[])
   
   return (
     <div className={clsx(product.product)}>

@@ -9,6 +9,7 @@ import img2 from "../../../../assets/img/img-tap.png";
 import products from "./introproduct.module.scss";
 const IntroProduct = () => {
   const {loading} = useSelector((state)=> state.apiCategory)
+  // console.log(loading);
 
   return (
     <div className={clsx(products.intro)}>
