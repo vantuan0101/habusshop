@@ -21,6 +21,10 @@ const productApi = {
     remove(id){
         const url = `/products/${id}`
         return axiosClient.delete(url)
+    },
+    getLimit(number){
+        const url = `/products?limit=${number}`
+        return axiosClient.get(url)
     }
 }
 

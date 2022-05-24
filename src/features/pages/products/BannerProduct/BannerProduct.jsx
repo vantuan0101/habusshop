@@ -1,15 +1,19 @@
-import React from "react";
 import clsx from "clsx";
-import style from './style.module.scss'
+import React from "react";
+import Skeleton from "react-loading-skeleton";
+import { useSelector } from "react-redux";
 import img1 from "../../../../assets/img/SVG/Asset1.svg";
 import img2 from "../../../../assets/img/SVG/Asset2.svg";
 import img3 from "../../../../assets/img/SVG/Asset3.svg";
-import Skeleton from "react-loading-skeleton";
+import style from './style.module.scss';
 
-const BannerProduct = ({state}) => {
+const BannerProduct = () => {
+  const {loading} = useSelector((state)=> state.apiCategory)
+  // console.log(loading);
+
   return (
     <>
-      {state ? (
+      {!loading ? (
         <div className={clsx(style.products_card)}>
           <div className={clsx(style.products_card_heading)}>
             <h3>Lightning Fast Shipping</h3>

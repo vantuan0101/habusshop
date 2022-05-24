@@ -1,13 +1,16 @@
 import React from "react";
-import Header from "../../components/Header/Header";
+import { useSelector } from "react-redux";
 import { Outlet } from "react-router-dom";
-import Loading from "../../components/Loading/Loading";
 import Footer from "../../components/Footer/Footer";
+import Header from "../../components/Header/Header";
+import Loading from "../../components/Loading/Loading";
 
-const OutletHeader = ({ load }) => {
+const OutletHeader = () => {
+  const {loading } = useSelector((state)=> state.apiProduct);
+
   return (
     <>
-      {load ? (
+      {!loading ? (
         <>
           <Header />
           <Outlet />

@@ -1,10 +1,11 @@
 import React from "react";
 import Home from "../pages/Home/Main/Home";
-const MainLayout = ({ dataProduct }) => {
+const MainLayout = () => {
+
   return (
     <>
       <div className="App">
-        <Home dataProduct={dataProduct} />
+        <Home />
       </div>
     </>
   );

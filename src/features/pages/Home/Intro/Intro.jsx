@@ -3,7 +3,7 @@ import React from "react";
 import {
   AiOutlineBranches,
   AiOutlineReddit,
-  AiTwotoneSecurityScan,
+  AiTwotoneSecurityScan
 } from "react-icons/ai";
 import ImageOutro from "../../../../assets/img/image1.jpeg";
 import intro from "./intro.module.scss";

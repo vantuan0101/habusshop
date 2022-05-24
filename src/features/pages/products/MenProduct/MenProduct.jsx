@@ -1,39 +1,31 @@
 import clsx from "clsx";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import categoryApi from "../../../../api/categoryApi";
+import { fetchMenProductList } from "./categoryMenProductSlice";
 import products from "./menproduct.module.scss";
 const MenProduct = () => {
-  // const [categoryMenList, setCategoryMenList] = useState(null);
-  // useEffect(() => {
-  //   fetch("https://fakestoreapi.com/products/category/men's%20clothing")
-  //     .then((res) => res.json())
-  //     .then((json) => setCategoryMenList(json));
-  // }, []);
-  //    console.log(categoryMenList);
-  const [categoryMenList, setCategoryMenList] = useState(null);
-    useEffect(() => {
-        const categoryFetch = async () => {
-            const categoryList = await categoryApi.getSpecific("men's%20clothing");
-            setCategoryMenList(categoryList);
-        };
-        categoryFetch();
-    }, []);
+  const {dataProduct } = useSelector((state)=> state.apiMenProduct)
+  const dispatch = useDispatch()
+  useEffect(() => {
+    dispatch(fetchMenProductList())
+  },[dispatch])
+
   return (
     <div className={clsx(products.men_pd)}>
       <div className={clsx(products.men_ct)}>
         <div className={clsx(products.men_ct_header)}>
           <div className={clsx(products.men_ct_heading)}>
-            {categoryMenList ? (
+            {dataProduct ? (
               <h3>men's clothing</h3>
             ) : (
               <Skeleton width={100} />
             )}
-            {categoryMenList ? <p>Under $50</p> : <Skeleton width={100} />}
+            {dataProduct ? <p>Under $50</p> : <Skeleton width={100} />}
           </div>
-          {categoryMenList ? (
+          {dataProduct ? (
             <Link to="/products/details">
               <div className={clsx(products.men_ct_btn)}>Show All</div>
             </Link>
@@ -43,10 +35,10 @@ const MenProduct = () => {
         </div>
 
         <div className={clsx(products.men_ct_items)}>
-          {categoryMenList &&
-            categoryMenList.map((item) => (
-              <div key={item.id} className={clsx(products.men_ct_item)}>
-                {categoryMenList ? (
+          {dataProduct &&
+            dataProduct.map((item,index) => (
+              <div key={index} className={clsx(products.men_ct_item)}>
+                {dataProduct ? (
                   <div className={clsx(products.men_ct_pd)}>
                     <div className={clsx(products.men_ct_pd_img)}>
                       <img src={item.image} alt="" />

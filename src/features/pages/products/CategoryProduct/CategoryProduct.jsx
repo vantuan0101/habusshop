@@ -1,9 +1,12 @@
-import React from "react";
-import style from "./product.module.scss";
 import clsx from "clsx";
+import React from "react";
 import Skeleton from "react-loading-skeleton";
+import { useSelector } from "react-redux";
+import style from "./product.module.scss";
 
-const CategoryProduct = ({ categoryList }) => {
+const CategoryProduct = () => {
+  const {categoryList} = useSelector((state)=> state.apiCategory)
+
   return (
     <>
       {categoryList ? (

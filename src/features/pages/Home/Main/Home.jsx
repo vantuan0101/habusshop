@@ -1,21 +1,22 @@
 import clsx from "clsx";
 import React from "react";
-import home from "./home.module.scss";
 import Intro from "../Intro/Intro";
 import ProductReview from "../ProductPreview/ProductReview";
 import SliderProduct from "../Slider/Slider";
+import home from "./home.module.scss";
 
-const Home = ({ dataProduct }) => {
-  // console.log(dataSlider);
+const Home = () => {
+  
+  
   return (
     <div className={clsx(home.home)}>
       {/* Slider */}
-      <SliderProduct dataProduct={dataProduct} />
+      <SliderProduct />
 
       {/* intro */}
       <Intro />
 
-      <ProductReview dataProduct={dataProduct} />
+      <ProductReview />
     </div>
   );
 };

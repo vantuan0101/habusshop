@@ -1,16 +1,19 @@
-import React from "react";
 import clsx from "clsx";
-import products from "./introproduct.module.scss";
-import img1 from "../../../../assets/img/img-search.png";
-import img2 from "../../../../assets/img/img-tap.png";
-import img3 from "../../../../assets/img/img-happy.png";
+import React from "react";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
-const IntroProduct = ({ state }) => {
+import { useSelector } from "react-redux";
+import img3 from "../../../../assets/img/img-happy.png";
+import img1 from "../../../../assets/img/img-search.png";
+import img2 from "../../../../assets/img/img-tap.png";
+import products from "./introproduct.module.scss";
+const IntroProduct = () => {
+  const {loading} = useSelector((state)=> state.apiCategory)
+
   return (
     <div className={clsx(products.intro)}>
       <div className={clsx(products.intro_item)}>
-        {state ? (
+        {!loading ? (
           <>
             <div className={clsx(products.intro_item_header)}>
               <h3>Search</h3>
@@ -26,7 +29,7 @@ const IntroProduct = ({ state }) => {
       </div>
 
       <div className={clsx(products.intro_item)}>
-        {state ? (
+        {!loading ? (
           <>
             <div className={clsx(products.intro_item_header)}>
               <h3>Tap</h3>
@@ -42,7 +45,7 @@ const IntroProduct = ({ state }) => {
       </div>
 
       <div className={clsx(products.intro_item)}>
-        {state ? (
+        {!loading ? (
           <>
             <div className={clsx(products.intro_item_header)}>
               <h3>Happy</h3>

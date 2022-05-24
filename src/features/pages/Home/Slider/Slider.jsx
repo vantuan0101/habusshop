@@ -1,9 +1,13 @@
 import clsx from "clsx";
 import React from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import Slider from "react-slick";
 import homeslider from "./slider.module.scss";
-const SliderProduct = ({ dataProduct }) => {
+const SliderProduct = () => {
+  
+  const {dataProduct } = useSelector((state)=> state.apiProduct);
+
   let dataSlider = [];
   dataSlider = dataProduct.slice(0, 3);
   // console.log(dataSlider);

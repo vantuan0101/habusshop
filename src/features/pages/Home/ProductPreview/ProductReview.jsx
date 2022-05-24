@@ -1,19 +1,24 @@
 import clsx from "clsx";
-import React from "react";
+import React, { useEffect } from "react";
 import { AiOutlineArrowRight } from "react-icons/ai";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { fetchProductPreview } from "./productPreviewSlice";
 import product from "./productReview.module.scss";
 
-const ProductReview = ({ dataProduct }) => {
-  //   console.log(dataProduct);
-  let dataPreview = [];
-  dataPreview = dataProduct.slice(3, 8);
-  //   console.log(dataPreview);
+const ProductReview = () => {
+
+  const dispatch = useDispatch()
+  const {dataProduct} = useSelector((state)=> state.apiProductPreview)
+  useEffect(() => {
+    dispatch(fetchProductPreview(5))
+  },[dispatch])
+  
   return (
     <div className={clsx(product.product)}>
       <h3 className={clsx(product.product_name)}>Products</h3>
       <div className={clsx(product.product_container)}>
-        {dataPreview.map((img, index) => (
+        {dataProduct.map((img, index) => (
           <div key={img.id} className={clsx(product.product_show)}>
             <div className={clsx(product.product_item)}>
               <div className={clsx(product.product_content)}>

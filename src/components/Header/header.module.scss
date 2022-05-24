@@ -2,7 +2,7 @@
 @import "../../assets/scss/variable";
 
 .header {
-  height: 87px;
+  height: 70px;
   position: fixed;
   top: 0;
   left: 0;
@@ -12,7 +12,7 @@
   // mix-blend-mode: difference;
   // background-color:white;
   @include desktop{
-    height: 124px;
+    height: 60px;
 
   }
 }
