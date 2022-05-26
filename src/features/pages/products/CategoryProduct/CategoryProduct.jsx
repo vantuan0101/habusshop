@@ -7,6 +7,8 @@ import style from './product.module.scss';
 const CategoryProduct = () => {
     const { categoryList, loading } = useSelector((state) => state.apiCategory);
     // console.log(loading);
+// console.log(categoryList);
+
     return (
         <>
             <div className={clsx(style.products_category)}>
@@ -21,3 +23,4 @@ const CategoryProduct = () => {
 };
 
 export default CategoryProduct;
+// 

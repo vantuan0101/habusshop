@@ -1,19 +1,23 @@
+import categoryApi from 'api/categoryApi';
+import productApi from 'api/productsApi';
+
 const { createSlice, createAsyncThunk } = require('@reduxjs/toolkit');
-const { default: productApi } = require('api/productsApi');
 
 //  Create async thunk  
 export const fetchApiDataProduct = createAsyncThunk(
     'DataProduct/getDataProduct',
-     async () => {
-        const data = await productApi.getAll()
+     async (params , {dispatch}) => {
+        const data = await categoryApi.getSpecific(params)
+    //    dispatch(fetchApiDataProduct('electronics'))
+
         return data
-    
 });
 
 const initialState = {
     dataProduct: [],
     loading: false,
 };
+
 const apiProductSlice = createSlice({
     name: 'DataProduct',
     initialState,

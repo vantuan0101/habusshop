@@ -7,13 +7,20 @@ import MainLayout from './features/layout/MainLayout';
 import OutletHeader from './features/layout/OutletHeader';
 import { publicRoutes } from './routes/routes';
 import './App.css';
+import { fetchApiCategoryList } from 'redux/apiCategorySlice';
 
 function App() {
-    //Call API get Products All list
-    // const dispatch = useDispatch()
-    // useEffect(() => {
-    //   dispatch(fetchApiDataProduct())
-    // },[dispatch])
+    // Call APi get All category list
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(fetchApiCategoryList());
+        // console.log('re-render');
+    }, [dispatch]);
+    // //Call API get Products All list
+  // useEffect(() => {
+  //   dispatch(fetchApiDataProduct("men's%20clothing"))
+  //   console.log('re');
+  // },[])
     return (
         <Routes>
             <Route path="/" element={<OutletHeader />}>

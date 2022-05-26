@@ -11,12 +11,7 @@ import MenProduct from '../MenProduct/MenProduct';
 import products from './products.module.scss';
 const Products = () => {
 
-    // Call APi get All category list
-    const dispatch = useDispatch();
-    useEffect(() => {
-        dispatch(fetchApiCategoryList());
-        // console.log('re-render');
-    }, [dispatch]);
+    
     return (
         <div className={clsx(products.products)}>
             <div className={clsx(products.container)}>
