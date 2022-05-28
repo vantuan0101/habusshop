@@ -1,12 +1,10 @@
 import categoryApi from "api/categoryApi";
 import clsx from "clsx";
-import React, { useEffect, useState , memo} from "react";
+import React, { memo, useEffect, useState } from "react";
 import Skeleton from "react-loading-skeleton";
-import { Link } from "react-router-dom";
 import "react-loading-skeleton/dist/skeleton.css";
+import { Link } from "react-router-dom";
 import products from "./menproduct.module.scss";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchApiDataProduct } from "redux/apiProductSlice";
 const MenProduct = () => {
 
   

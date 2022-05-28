@@ -1,0 +1,169 @@
+@import '../../../../assets/scss/importAll';
+
+.carts {
+}
+.container {
+    margin-top: 100px;
+    padding: 0 15px;
+    @include desktop {
+        padding: 0 97px;
+    }
+}
+.mycarts {
+    font-size: 23px;
+    font-weight: 700;
+}
+
+.header {
+    margin-bottom: 50px;
+    .heading {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        justify-items: center;
+        align-items: center;
+    }
+}
+
+.products {
+    .product {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        align-items: center;
+        justify-items: center;
+        font-size: 16px;
+        margin: 20px 0;
+        @include desktop {
+            font-size: 20px;
+            
+
+        }
+        &_image {
+            width: 55px;
+            grid-row: 1 / 3;
+            @include desktop {
+                width: 200px;
+            }
+            & > img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+        }
+        &_price {
+            grid-row: 1/3;
+        }
+        &_quantity {
+            display: flex;
+            width: 50px;
+            justify-content: space-between;
+            align-items: center;
+            grid-row: 1/3;
+            @include desktop{
+                width: 60px;
+            }
+        }
+        &_total {
+            grid-row: 1/3;
+        }
+        &_remove {
+            grid-row: 1/3;
+        }
+    }
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    .message {
+        & > input {
+            border: none;
+            outline: none;
+            width: 94%;
+            padding-bottom: 100px;
+            border-radius: 10px;
+            padding-left: 10px;
+            padding-top: 10px;
+        }
+    }
+    .payment {
+        text-align: center;
+        .subtotal {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+        .ship_about {
+        }
+        .fee_ship {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            & > input {
+                margin-right: 7px;
+            }
+            &_contain {
+                display: flex;
+                align-items: center;
+                background-color: wheat;
+                border-radius: 10px;
+                padding: 5px 10px;
+                &_image {
+                    width: 30px;
+                    & > img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: contain;
+                    }
+                }
+                &_infor {
+                    width: 140px;
+                    font-size: 14px;
+                }
+                &_money {
+                    font-size: 14px;
+                }
+            }
+        }
+
+        .license {
+            width: 200px;
+            margin: 10px auto;
+            font-size: 11px;
+        }
+        .checkout {
+            width: 100%;
+            height: 35px;
+            line-height: 35px;
+            background-color: orange;
+            padding: 10px 0;
+            border-radius: 10px;
+            color: white;
+            font-size: 20px;
+            display: block;
+        }
+        .other_payment {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            & > div {
+                width: 44%;
+                display: flex;
+                align-items: center;
+                margin: 5px 0;
+                background-color: white;
+                border-radius: 5px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                padding-left: 10px;
+                margin: 5px auto;
+                & > span {
+                    margin-left: 5px;
+                }
+            }
+        }
+    }
+}

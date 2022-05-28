@@ -1,13 +1,20 @@
+import Carts from 'features/pages/Carts/Carts/Carts';
+import CheckOut from 'features/pages/Carts/Checkout/CheckOut';
+import LayoutCart from 'features/pages/Carts/LayoutCart';
+import MainProductDetails from 'features/pages/ProductDetail';
+import DetailSpecificProduct from 'features/pages/ProductDetail/DetailSpecific/DetailSpecificProduct';
+import LayoutProductDetail from 'features/pages/ProductDetail/LayoutProductDetail';
+import Products from 'features/pages/products/HomeProduct/Products';
+import LayoutProduct from 'features/pages/products/layoutProduct';
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
-import { fetchApiDataProduct } from 'redux/apiProductSlice';
+import { fetchApiCategoryList } from 'redux/apiCategorySlice';
+import './App.css';
 import NotFound from './components/NotFound/NotFound';
 import MainLayout from './features/layout/MainLayout';
 import OutletHeader from './features/layout/OutletHeader';
 import { publicRoutes } from './routes/routes';
-import './App.css';
-import { fetchApiCategoryList } from 'redux/apiCategorySlice';
 
 function App() {
     // Call APi get All category list
@@ -16,19 +23,23 @@ function App() {
         dispatch(fetchApiCategoryList());
         // console.log('re-render');
     }, [dispatch]);
-    // //Call API get Products All list
-  // useEffect(() => {
-  //   dispatch(fetchApiDataProduct("men's%20clothing"))
-  //   console.log('re');
-  // },[])
+
     return (
         <Routes>
             <Route path="/" element={<OutletHeader />}>
                 <Route index element={<MainLayout />} />
-                {publicRoutes.map((route, index) => {
-                    let Page = route.component;
-                    return <Route key={index} path={route.path} element={<Page />} />;
-                })}
+                <Route path="products" element={<LayoutProduct />}>
+                    <Route index element={<Products />} />
+                    <Route path="details" element={<LayoutProductDetail />}>
+                        <Route index element={<MainProductDetails />} />
+                        <Route path=":detailsId" element={<DetailSpecificProduct />} />
+                    </Route>
+                </Route>
+                <Route path="carts"  element={<LayoutCart />} >
+                    <Route index element={<Carts />} />
+                    <Route path="checkout"  element={<CheckOut />} />
+                    
+                </Route>
             </Route>
 
             <Route path="*" element={<NotFound />} />

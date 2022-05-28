@@ -3,7 +3,7 @@ import axiosClient from "./axiosClient";
 // Call API Product get list data
 const productApi = {
     getAll(params) {
-        const url = '/products'
+        const url = '/products/'
         return axiosClient.get(url, {params})
     },
     get(id){
@@ -24,6 +24,10 @@ const productApi = {
     },
     getLimit(number){
         const url = `/products?limit=${number}`
+        return axiosClient.get(url)
+    },
+    getAllSort(params){
+        const url = `/products${params}`
         return axiosClient.get(url)
     }
 }

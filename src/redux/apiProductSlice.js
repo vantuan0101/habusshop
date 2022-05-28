@@ -1,5 +1,4 @@
 import categoryApi from 'api/categoryApi';
-import productApi from 'api/productsApi';
 
 const { createSlice, createAsyncThunk } = require('@reduxjs/toolkit');
 

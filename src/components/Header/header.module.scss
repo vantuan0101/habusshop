@@ -1,268 +1,279 @@
-@import "../../assets/scss/breakpoint";
-@import "../../assets/scss/variable";
+@import '../../assets/scss/breakpoint';
+@import '../../assets/scss/variable';
 
 .header {
-  height: 70px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  z-index: 10;
-  // mix-blend-mode: difference;
-  // background-color:white;
-  @include desktop{
-    height: 60px;
-
-  }
+    height: 70px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 10;
+    // mix-blend-mode: difference;
+    background-color:white;
+    @include desktop {
+        height: 60px;
+    }
 }
 .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  // height: 60%;
-  height: 100%;
-  padding: 0 15px;
-
-  @include desktop {
-    padding: 0 97px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // height: 60%;
     height: 100%;
-  }
+    padding: 0 15px;
+
+    @include desktop {
+        padding: 0 97px;
+        height: 100%;
+    }
 }
 .logo {
-  height: 100%;
-  cursor: pointer;
-  width: 100px;
-  @include md-tablet {
-    width: 150px;
-  }
-  @include desktop {
-    width: 120px;
-  }
+    height: 100%;
+    cursor: pointer;
+    width: 100px;
+    @include md-tablet {
+        width: 150px;
+    }
+    @include desktop {
+        width: 120px;
+    }
 }
 .logoImg {
-  width: 100%;
-  height: 100%;
+    width: 100%;
+    height: 100%;
 }
 .input__container {
-  display: block;
-  width: 100%;
-  @include desktop {
-    flex-direction: row;
-    width: 500px;
-    display: none;
-  }
-  & > input {
-    height: 30px;
-    margin: 20px 0 10px 0;
+    display: block;
     width: 100%;
-    border: 3px solid $btn-color;
-    border-radius: 5px;
-    outline: none;
-    padding: 0 5px;
     @include desktop {
-      padding: 0 10px;
-      // display: none;
-      width: 400px;
-      height: 33px;
-      margin: 0;
-      margin-top: -7px;
-    }
-  }
-  & > button {
-    margin-top: 10px;
-    border: none;
-    border-radius: 4px;
-    background-color: $btn-color;
-    color: $text-white;
-    height: 30px;
-    width: 100%;
-    cursor: pointer;
-    &:last-child {
-      @include mobile-md-tablet {
+        flex-direction: row;
+        width: 500px;
         display: none;
-      }
     }
-    @include desktop {
-      // display: none;
-      width: 50px;
-      height: 100%;
-      line-height: 30px;
-      margin-left: 4px;
-      margin-top: 0;
+    & > input {
+        height: 30px;
+        margin: 20px 0 10px 0;
+        width: 100%;
+        border: 3px solid $btn-color;
+        border-radius: 5px;
+        outline: none;
+        padding: 0 5px;
+        @include desktop {
+            padding: 0 10px;
+            // display: none;
+            width: 400px;
+            height: 33px;
+            margin: 0;
+            margin-top: -7px;
+        }
     }
-  }
+    & > button {
+        margin-top: 10px;
+        border: none;
+        border-radius: 4px;
+        background-color: $btn-color;
+        color: $text-white;
+        height: 30px;
+        width: 100%;
+        cursor: pointer;
+        &:last-child {
+            @include mobile-md-tablet {
+                display: none;
+            }
+        }
+        @include desktop {
+            // display: none;
+            width: 50px;
+            height: 100%;
+            line-height: 30px;
+            margin-left: 4px;
+            margin-top: 0;
+        }
+    }
 }
 
 .input {
-  position: relative;
-  width: 500px;
-  &__field {
-    box-sizing: border-box;
-    display: block;
-    width: 100%;
-    border: 3px solid $btn-color;
-    padding: calc(0.5rem * 1.5) 0.5rem;
-    color: $btn-color;
-    background: transparent;
-    border-radius: 4px;
-    outline: none;
-    @include mobile-md-tablet {
-      background-color: white;
-    }
-    &:focus,
-    &:not(:placeholder-shown) {
-      & + .input__label {
-        transform: translate(0.25rem, -65%) scale(0.8);
+    position: relative;
+    width: 500px;
+    &__field {
+        box-sizing: border-box;
+        display: block;
+        width: 100%;
+        border: 3px solid $btn-color;
+        padding: calc(0.5rem * 1.5) 0.5rem;
         color: $btn-color;
-      }
+        background: transparent;
+        border-radius: 4px;
+        outline: none;
+        @include mobile-md-tablet {
+            background-color: white;
+        }
+        &:focus,
+        &:not(:placeholder-shown) {
+            & + .input__label {
+                transform: translate(0.25rem, -65%) scale(0.8);
+                color: $btn-color;
+            }
+        }
     }
-  }
 
-  &__label {
-    position: absolute;
-    left: 0;
-    top: 0;
-    padding: calc(0.5rem * 0.7) calc(14px * 0.5);
-    margin: calc(0.5rem * 0.7 + 3px) calc(14px * 0.5);
-    background: pink;
-    white-space: nowrap;
-    transform: translate(0, 0);
-    transform-origin: 0 0;
-    background: white;
-    transition: transform 120ms ease-in;
-    font-weight: bold;
-    line-height: 1.2;
-    // opacity: 0.6;
-  }
+    &__label {
+        position: absolute;
+        left: 0;
+        top: 0;
+        padding: calc(0.5rem * 0.7) calc(14px * 0.5);
+        margin: calc(0.5rem * 0.7 + 3px) calc(14px * 0.5);
+        background: pink;
+        white-space: nowrap;
+        transform: translate(0, 0);
+        transform-origin: 0 0;
+        background: white;
+        transition: transform 120ms ease-in;
+        font-weight: bold;
+        line-height: 1.2;
+        // opacity: 0.6;
+    }
 }
 // input
 .navbar {
-  color: $text-black;
-  height: 100vh;
-  background-color: gray;
-  // display: none;
-  // animation-name : blurShow;
-  // animation-duration:0.5s;
-  transition: all 0.5s cubic-bezier(0.4, 0, 1, 1);
-  @include mobile-md-tablet {
-    position: absolute;
-    // right: -100%;
-    top: 0;
-    width: 50vw;
-  }
-  @include desktop {
-    height: 100%;
-    // right: 11%;
-    display: flex;
-    align-items: center;
-    background-color: transparent;
-    opacity: 1;
-  }
+    color: $text-black;
+    height: 100vh;
+    background-color: gray;
+    // display: none;
+    // animation-name : blurShow;
+    // animation-duration:0.5s;
+    transition: all 0.5s cubic-bezier(0.4, 0, 1, 1);
+    @include mobile-md-tablet {
+        position: absolute;
+        // right: -100%;
+        top: 0;
+        width: 50vw;
+    }
+    @include desktop {
+        height: 100%;
+        // right: 11%;
+        display: flex;
+        align-items: center;
+        background-color: transparent;
+        opacity: 1;
+    }
 }
 .navbar_container {
-  margin-top: 100%;
-  @include desktop {
-    margin-top: 0;
-    display: flex;
-    flex-direction: row-reverse;
-  }
+    margin-top: 100%;
+    @include desktop {
+        margin-top: 0;
+        display: flex;
+        flex-direction: row-reverse;
+    }
 }
 .menu {
-  // margin-top: 90px;
-  z-index: 10;
+    // margin-top: 90px;
+    z-index: 10;
 
-  @include desktop {
-    margin-top: 0px;
-    background-color: transparent;
-    display: flex;
-    align-items: center;
-  }
+    @include desktop {
+        margin-top: 0px;
+        background-color: transparent;
+        display: flex;
+        align-items: center;
+    }
 }
 .login {
-  // animation-name: blurShow;
-  // animation-duration: 0.5s;
-  transition: all cubic-bezier(0.18, 0.89, 0.32, 1.28) 0.5s;
-  font-size: 20px;
-  // display: none;
-  color : black;
+    // animation-name: blurShow;
+    // animation-duration: 0.5s;
+    transition: all cubic-bezier(0.18, 0.89, 0.32, 1.28) 0.5s;
+    font-size: 20px;
+    // display: none;
+    color: black;
 
-
-  cursor: pointer;
-  @include md-tablet {
-    font-size: 30px;
-  }
-  @include desktop {
-    display: block;
-    font-size: 16px;
-    background-color: transparent;
-    margin: 0 15px;
-    // margin: 15px 0;
-    text-align: center;
-  }
+    cursor: pointer;
+    @include md-tablet {
+        font-size: 30px;
+    }
+    @include desktop {
+        display: block;
+        font-size: 16px;
+        background-color: transparent;
+        margin: 0 15px;
+        // margin: 15px 0;
+        text-align: center;
+    }
 }
 .search {
-  font-size: 20px;
-  margin: 21px auto;
-  display: none;
-  cursor: pointer;
+    font-size: 20px;
+    margin: 21px auto;
+    display: none;
+    cursor: pointer;
 
-  @include desktop {
-    display: block;
-    margin: 0 15px;
-  }
+    @include desktop {
+        display: block;
+        margin: 0 15px;
+    }
 }
 .close {
-  color: white;
-  font-size: 30px;
-  float: right;
-  margin-top: 30px;
-  margin-right: 15px;
-  z-index: 10;
-  display: none;
-  @include md-tablet {
-    font-size: 41px;
-  }
+    color: white;
+    font-size: 30px;
+    float: right;
+    margin-top: 30px;
+    margin-right: 15px;
+    z-index: 10;
+    display: none;
+    @include md-tablet {
+        font-size: 41px;
+    }
 }
 
 .menulist {
-  display: flex;
-  // padding-right: 10px;
-  align-items: center;
+    display: flex;
+    // padding-right: 10px;
+    align-items: center;
 }
 .carts {
-  margin: 0px 8px;
-  width: 22px;
-  font-size: 22px;
-  cursor: pointer;
-  color : black;
-
-  @include md-tablet {
-    font-size: 33px;
-    margin: 0px 15px;
-  }
-  @include desktop {
-    margin: 0 15px;
+    margin: 0px 8px;
     width: 22px;
-    margin-right: -3px;
-  }
+    font-size: 22px;
+    cursor: pointer;
+    color: black;
+
+    @include md-tablet {
+        font-size: 33px;
+        margin: 0px 15px;
+    }
+    @include desktop {
+        margin: 0 15px;
+        width: 22px;
+        margin-right: -3px;
+    }
+    & > div {
+        position: relative;
+        & > span {
+            color: pink;
+            position: absolute;
+            top: 0px;
+            right: -5px;
+            width: 15px;
+            height: 15px;
+            background-color: red;
+            border-radius: 50%;
+            font-size: 11px;
+            text-align: center;
+        }
+    }
 }
 .app {
-  margin: 0px 8px;
-  width: 22px;
-  font-size: 22px;
-  @include md-tablet {
-    font-size: 33px;
-    margin: 0px 15px;
-  }
-  @include desktop {
-    margin: 0 15px;
-    display: none;
-  }
+    margin: 0px 8px;
+    width: 22px;
+    font-size: 22px;
+    @include md-tablet {
+        font-size: 33px;
+        margin: 0px 15px;
+    }
+    @include desktop {
+        margin: 0 15px;
+        display: none;
+    }
 }
 
 .active {
-  display: block !important;
+    display: block !important;
 }
-
-
