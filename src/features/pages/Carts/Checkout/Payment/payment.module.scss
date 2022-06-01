@@ -1,0 +1,87 @@
+@import '../../../../../assets/scss/importAll';
+
+.container {
+}
+.page {
+    
+    
+}
+.payment, .billing{
+    border: 1px solid;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.name {
+    display: flex;
+    align-items: center;
+    & > p {
+        margin: 5px;
+        &:first-child {
+            font-size: 20px;
+            background-color: #9ec4c7;
+            color: white;
+            width: 37px;
+            text-align: center;
+            border-radius: 10px;
+        }
+        &:last-child {
+            font-size: 22px;
+            font-weight: 500;
+        }
+    }
+}
+.cards {
+    display: grid;
+    border: 1px solid gray;
+    padding: 10px;
+    border-radius: 10px;
+    &__select {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        &__name {
+            display: flex;
+            & >  div {
+                margin: 0 10px;
+                font-size: 32px;
+            }
+        }
+    }
+    &__credit {
+        display: flex;
+        align-items: center;
+        & > div {
+            margin-left: 10px;
+        }
+    }
+    &__infor{
+        display: grid;
+    }
+    
+}
+.paypal {
+    display: flex;
+    align-items: center;
+    border: 1px solid gray;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 20px;
+    & > div {
+        font-size: 41px;
+        margin-left: 22px;
+    }
+}
+.billing {
+    margin: 28px 0;
+    
+}
+.rule {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    & > div {
+        margin-left:6px;
+    }
+}
+

@@ -1,71 +1,71 @@
-import categoryApi from "api/categoryApi";
-import clsx from "clsx";
-import React, { memo, useEffect, useState } from "react";
-import Skeleton from "react-loading-skeleton";
-import "react-loading-skeleton/dist/skeleton.css";
-import { Link } from "react-router-dom";
-import products from "./menproduct.module.scss";
+import categoryApi from 'api/categoryApi';
+import clsx from 'clsx';
+import React, { memo, useEffect, useState } from 'react';
+import Skeleton from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css';
+import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { addCart } from 'redux/cartsSlice';
+import products from './menproduct.module.scss';
 const MenProduct = () => {
-
-  
-  // const {dataProduct } = useSelector((state)=> state.apiProduct)
-
-
-  const [dataProduct, setDataProduct] = useState([]);
-  useEffect(() => {
-      const res = async () => {
-          const req = await categoryApi.getSpecific("men's%20clothing");
-          setDataProduct(req);
-      };
-      res();
-  }, []);
-
-  return (
-    <div className={clsx(products.men_pd)}>
-      <div className={clsx(products.men_ct)}>
-        <div className={clsx(products.men_ct_header)}>
-          <div className={clsx(products.men_ct_heading)}>
-            {dataProduct ? (
-              <h3>men's clothing</h3>
-            ) : (
-              <Skeleton width={100} />
-            )}
-            {dataProduct ? <p>Under $50</p> : <Skeleton width={100} />}
-          </div>
-          {dataProduct ? (
-            <Link to="/products/details">
-              <div className={clsx(products.men_ct_btn)}>Show All</div>
-            </Link>
-          ) : (
-            <Skeleton width={130} height={40} />
-          )}
-        </div>
-
-        <div className={clsx(products.men_ct_items)}>
-          {dataProduct &&
-            dataProduct.map((item,index) => (
-              <div key={index} className={clsx(products.men_ct_item)}>
-                {dataProduct ? (
-                  <div className={clsx(products.men_ct_pd)}>
-                    <div className={clsx(products.men_ct_pd_img)}>
-                      <img src={item.image} alt="" />
+    const [dataProduct, setDataProduct] = useState([]);
+    useEffect(() => {
+        const res = async () => {
+            const req = await categoryApi.getSpecific("men's%20clothing");
+            setDataProduct(req);
+        };
+        res();
+    }, []);
+    const dispatch = useDispatch();
+    const handleAddCarts = (item) => {
+        dispatch(addCart(item));
+    };
+    return (
+        <div className={clsx(products.men_pd)}>
+            <div className={clsx(products.men_ct)}>
+                <div className={clsx(products.men_ct_header)}>
+                    <div className={clsx(products.men_ct_heading)}>
+                        <h3>men's clothing</h3>
+                        <p>Under $50</p>
                     </div>
-                    <div className={clsx(products.men_ct_pd_add)}>+</div>
-                  </div>
-                ) : (
-                  <Skeleton width={300} height={300} />
-                )}
-
-                <div className={clsx(products.men_ct_dsc)}>
-                  <p>{item ? item.title : <Skeleton height={40} />}</p>
-                  <p> {item ? "$" + item.price : <Skeleton width={40} />}</p>
+                    <Link to="/products/details">
+                        <div className={clsx(products.men_ct_btn)}>Show All</div>
+                    </Link>
                 </div>
-              </div>
-            ))}
+
+                <div className={clsx(products.men_ct_items)}>
+                    {dataProduct.map((item, index) => (
+                        <div key={index} className={clsx(products.men_ct_item)}>
+                            <div className={clsx(products.men_ct_pd)}>
+                                {item ? (
+                                    <>
+                                        <div className={clsx(products.men_ct_pd_img)}>
+                                            <img src={item.image} alt="" />
+                                        </div>
+                                        <div
+                                            className={clsx(products.men_ct_pd_add)}
+                                            onClick={() => handleAddCarts(item)}
+                                        >
+                                            +
+                                        </div>
+                                    </>
+                                ) : (
+                                    <Skeleton />
+                                )}
+                            </div>
+
+                            <div className={clsx(products.men_ct_dsc)}>
+                                <Link to={`/products/details/${item.id}`}>
+                                   {item ? item.title : <Skeleton height={40} />}
+                                </Link>
+                                <p> {item ? '$' + item.price : <Skeleton width={40} />}</p>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  );
+    );
 };
 
 export default memo(MenProduct);

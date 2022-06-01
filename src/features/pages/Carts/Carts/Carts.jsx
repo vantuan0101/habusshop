@@ -66,7 +66,9 @@ const Carts = () => {
                                     <BsFillArrowRightCircleFill onClick={() => handleIncreaseCount(index)} />
                                 </div>
                                 <div className={clsx(style.product_total)}>${cart.price * cart.quantityCount}</div>
-                                <div className={clsx(style.product_remove)} onClick={() => handleRemoveCart(index)}>X</div>
+                                <div className={clsx(style.product_remove)} onClick={() => handleRemoveCart(index)}>
+                                    X
+                                </div>
                             </div>
                         ))}
                     </div>
@@ -101,7 +103,9 @@ const Carts = () => {
                         <div className={clsx(style.license)}>
                             *By Deselecting Shipping Protection , The product is not damage or stolen
                         </div>
-                        <Link to='checkout' className={clsx(style.checkout)}>Checkout</Link>
+                        <Link to="checkout" className={clsx(style.checkout)}>
+                            Checkout
+                        </Link>
                         <div className={clsx(style.other_payment)}>
                             <div>
                                 <AiFillGoogleCircle />

@@ -1,0 +1,145 @@
+@import '../../../../../assets/scss/importAll';
+.layout {
+    margin-top: 100px;
+    padding: 0 15px;
+    @include desktop {
+        padding: 0 97px;
+    }
+}
+.container {
+}
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.heading {
+    & > p {
+        font-size: 26px;
+        font-weight: 600;
+    }
+    & > p:last-child {
+        font-size: 24px;
+        color: skyblue;
+    }
+}
+
+.items {
+    display: flex;
+    flex-direction: column-reverse;
+    @include desktop {
+        flex-direction: row;
+    }
+    &__item {
+    }
+}
+
+.product {
+    border: 1px solid;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 28px 0;
+    @include desktop {
+        width: 50%;
+        height: 100%;
+        margin-left: 28px;
+    }
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        & > div > span {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        & > div:last-child {
+            width: 50px;
+            border: 1px solid;
+            text-align: center;
+            border-radius: 10px;
+        }
+    }
+    &__items {
+        padding: 0 10px;
+        margin: 20px 0;
+    }
+    &__about {
+        display: flex;
+        // justify-content: space-between;
+
+        align-items: center;
+    }
+    &__image {
+        width: 50px;
+        height: 50px;
+        margin-right: 20px;
+        & > img {
+            width: 100%;
+            height: 100%;
+            object-fit: fill;
+        }
+    }
+    &__price {
+        & > p {
+            color: gray;
+        }
+    }
+    &__voucher {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 20px 0;
+        & > input {
+            width: 200px;
+            height: 50px;
+            border: none;
+            border-radius: 8px;
+            outline: none;
+            padding-left: 10px;
+            @include md-tablet-desktop {
+                width: 70%;
+            }
+        }
+        & > div {
+            width: 100px;
+            border: 1px solid;
+            text-align: center;
+            border-radius: 10px;
+            background-color: #a6d1d6;
+            color: white;
+            margin-left: 7px;
+            @include md-tablet-desktop {
+                width: 25%;
+                height: 50px;
+                line-height: 50px;
+            }
+        }
+    }
+    &__final_price {
+        & > div {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        &_l {
+            & > p:first-child {
+                color: gray;
+            }
+            & > p:last-child {
+                color: black;
+                font-weight: 700;
+            }
+        }
+    }
+
+    &__total_pay {
+        font-size: 20px;
+        & > p:first-child {
+            color: black;
+        }
+        & > p:last-child {
+            color: black;
+            font-weight: 700;
+        }
+    }
+}

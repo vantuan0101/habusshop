@@ -1,0 +1,46 @@
+@import '../../../../../assets/scss/importAll';
+
+.container {
+    margin-top: 100px;
+    padding: 0 15px;
+    background-color:#FAF6F4;
+    @include desktop {
+        padding: 0 97px;
+    }
+}
+.thanks {
+    text-align: center;
+    margin: 10px 0;
+    @include desktop {
+
+        font-size: 30px;
+    }
+}
+.contact {
+    text-align: center;
+    margin: 10px 0;
+    @include desktop {
+
+        font-size: 30px;
+    }
+    & > p > a {
+        color : orange;
+        font-style: italic;
+        text-decoration: underline;
+    }
+}
+.shopping {
+    display: flex;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid;
+    padding: 10px 0;
+    font-size: 20px;
+    border-radius: 10px;
+    color: white;
+    background-color: orange;
+    @include desktop {
+        width: 300px;
+    }
+}

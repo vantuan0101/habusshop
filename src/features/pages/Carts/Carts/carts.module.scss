@@ -35,8 +35,6 @@
         margin: 20px 0;
         @include desktop {
             font-size: 20px;
-            
-
         }
         &_image {
             width: 55px;
@@ -59,7 +57,7 @@
             justify-content: space-between;
             align-items: center;
             grid-row: 1/3;
-            @include desktop{
+            @include desktop {
                 width: 60px;
             }
         }
@@ -76,14 +74,20 @@
     display: flex;
     flex-direction: column;
     .message {
+        &  > p{
+            margin-bottom: 10px;
+        }
         & > input {
             border: none;
             outline: none;
-            width: 94%;
+            width: 100%;
             padding-bottom: 100px;
             border-radius: 10px;
             padding-left: 10px;
             padding-top: 10px;
+            margin-bottom: 10px;
+
+            
         }
     }
     .payment {
@@ -92,8 +96,10 @@
             display: flex;
             align-items: center;
             justify-content: space-around;
+            margin: 10px 0;
         }
         .ship_about {
+            margin: 10px 0;
         }
         .fee_ship {
             display: flex;
@@ -133,14 +139,20 @@
         }
         .checkout {
             width: 100%;
-            height: 35px;
-            line-height: 35px;
+            height: 60px;
             background-color: orange;
             padding: 10px 0;
             border-radius: 10px;
             color: white;
             font-size: 20px;
-            display: block;
+            // display: block;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            @include md-tablet-desktop {
+                width: 200px;
+                margin: 0 auto;
+            }
         }
         .other_payment {
             margin-top: 10px;
@@ -151,8 +163,10 @@
             flex-wrap: wrap;
             & > div {
                 width: 44%;
+                height: 50px;
                 display: flex;
                 align-items: center;
+                justify-content: center;
                 margin: 5px 0;
                 background-color: white;
                 border-radius: 5px;
@@ -160,8 +174,14 @@
                 padding-bottom: 10px;
                 padding-left: 10px;
                 margin: 5px auto;
+                cursor: pointer;
+                & >  svg {
+                    width : 30px;
+                }
                 & > span {
                     margin-left: 5px;
+                    width :  100px;
+                    text-align: left;
                 }
             }
         }

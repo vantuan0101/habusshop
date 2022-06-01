@@ -1,12 +1,10 @@
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import ProductDetail from './PageDetails/ProductDetail';
-import { fetchApiDataProduct } from '../../../redux/apiProductSlice';
 import categoryApi from 'api/categoryApi';
 import productApi from 'api/productsApi';
-import { Outlet } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addCart } from '../../../redux/cartsSlice';
+import ProductDetail from './PageDetails/ProductDetail';
 
-import {addCart} from '../../../redux/cartsSlice'
 const MainProductDetails = () => {
     const [dataProduct, setDataProduct] = useState([]);
     const [productClick, setProductClick] = useState('electronics');
@@ -16,18 +14,14 @@ const MainProductDetails = () => {
     const b = showAll ? 'getAllSort' : 'getSpecific';
 
     const dispatch = useDispatch()
-    // const carts =  useSelector(state=>state.carts)
-    // console.log(carts);
-
-    //Call API get Products All list
+   
     useEffect(() => {
         const res = async () => {
             const req = await a[b](showAll ? sort : productClick + sort);
             setDataProduct(req);
         };
         res();
-        // setSort('')
-        // console.log('re');
+        
     }, [productClick, sort, showAll]);
     const handleGetCategoryName = (categoryName) => {
         setProductClick(categoryName);

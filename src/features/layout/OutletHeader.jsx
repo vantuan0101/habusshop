@@ -1,27 +1,26 @@
-import React from "react";
-import { useSelector } from "react-redux";
-import { Outlet } from "react-router-dom";
-import Footer from "../../components/Footer/Footer";
-import Header from "../../components/Header/Header";
-import Loading from "../../components/Loading/Loading";
+import React from 'react';
+import { useSelector } from 'react-redux';
+import { Outlet } from 'react-router-dom';
+import Footer from '../../components/Footer/Footer';
+import Header from '../../components/Header/Header';
+import Loading from '../../components/Loading/Loading';
 
 const OutletHeader = () => {
-  const {loading } = useSelector((state)=> state.apiProduct);
-
-  return (
-    <>
-      {!loading ? (
+    const { loading } = useSelector((state) => state.apiCategory);
+    // console.log(loading);
+    return (
         <>
-          <Header />
-          <Outlet />
-          <Footer />
-
+            {!loading ? (
+                <>
+                    <Header />
+                    <Outlet />
+                    <Footer />
+                </>
+            ) : (
+                <Loading />
+            )}
         </>
-      ) : (
-        <Loading />
-      )}
-    </>
-  );
+    );
 };
 
 export default OutletHeader;

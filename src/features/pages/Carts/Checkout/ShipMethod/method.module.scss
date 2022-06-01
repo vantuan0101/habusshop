@@ -1,0 +1,67 @@
+@import '../../../../../assets/scss/importAll';
+
+.container {
+
+}
+.page {
+    border: 1px solid;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.name {
+    display: flex;
+    align-items: center;
+    & > p {
+        margin : 5px;
+        &:first-child{
+            font-size: 20px;
+            background-color: #9EC4C7;
+            color: white;
+            width: 37px;
+            text-align: center;
+            border-radius: 10px;
+        }
+        &:last-child{
+            font-size: 22px;
+            font-weight: 500;
+        }
+    }
+
+}
+.method {
+    margin : 20px 0;
+    &__1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background : #F6F8FA;
+        color: gray;
+        margin : 7px 0;
+        border-radius:10px;
+    }
+    
+    
+    &__about {
+        color :black;
+
+        display: flex;
+        align-items: center;
+        margin-left: 10px;
+        & > div {
+            margin:0  5px ;
+        }
+    }
+    &__img {
+        width : 30px;
+        height:30px;
+        & img {
+            width : 100%;height : 100%;
+            object-fit: fill;
+        }
+    }
+    &__infor {
+    }
+    &__price {
+    }
+}

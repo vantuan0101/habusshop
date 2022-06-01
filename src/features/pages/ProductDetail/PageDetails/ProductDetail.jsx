@@ -1,5 +1,6 @@
 import clsx from 'clsx';
 import React, { memo } from 'react';
+import Skeleton from 'react-loading-skeleton';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import style from './productdetail.module.scss';
@@ -10,7 +11,7 @@ const ProductDetail = ({
     handleSortAsc,
     handleShowAllProduct,
     productClick,
-    handleAddClick
+    handleAddClick,
 }) => {
     const { categoryList } = useSelector((state) => state.apiCategory);
     const handleCategoryName = (e) => {
@@ -18,7 +19,7 @@ const ProductDetail = ({
         handleGetCategoryName(e.target.innerHTML);
         // return productClick
     };
-    
+
     return (
         <div className={clsx(style.pd_detail)}>
             <ul className={clsx(style.pd_header)}>
@@ -65,7 +66,7 @@ const ProductDetail = ({
                             </ul>
                         </div>
                     </div>
-                    
+
                     <div className={clsx(style.all_product)} onClick={handleShowAllProduct}>
                         Show All Products
                     </div>
@@ -74,13 +75,28 @@ const ProductDetail = ({
                             <li key={item.id} className={clsx(style.products_items)}>
                                 <div className={clsx(style.products_image)}>
                                     <div className={clsx(style.products_img)}>
-                                        <img src={item.image} alt="" />
-                                        <div className={clsx(style.products_add)} onClick={()=>handleAddClick(item)}>+</div>
+                                        {item ? (
+                                            <>
+                                                <img src={item.image} alt="" />
+                                                <div
+                                                    className={clsx(style.products_add)}
+                                                    onClick={() => handleAddClick(item)}
+                                                >
+                                                    +
+                                                </div>
+                                            </>
+                                        ) : (
+                                            <Skeleton />
+                                        )}
                                     </div>
                                 </div>
                                 <div className={clsx(style.products_abouts)}>
-                                    <Link to={`${item.id}`} className={clsx(style.products_name)}>{item.title}</Link>
-                                    <p className={clsx(style.products_price)}>${item.price}</p>
+                                    <Link to={`${item.id}`} className={clsx(style.products_name)}>
+                                        {item ? item.title : <Skeleton />}
+                                    </Link>
+                                    <p className={clsx(style.products_price)}>
+                                        {item ? "$" + item.price : <Skeleton />}
+                                        </p>
                                 </div>
                             </li>
                         ))}

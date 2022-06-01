@@ -1,7 +1,7 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
 
-const LayoutCart = () => {
+const LayoutPage = () => {
   return (
     <>
         <Outlet />
@@ -9,4 +9,4 @@ const LayoutCart = () => {
   )
 }
 
-export default LayoutCart
+export default LayoutPage

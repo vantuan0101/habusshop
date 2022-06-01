@@ -1,12 +1,14 @@
 import { configureStore } from "@reduxjs/toolkit";
-import apiProductReducer from "../redux/apiProductSlice";
 import apiCategoryReducer from "./apiCategorySlice";
 import cartReducer from './cartsSlice'
+import dataFormReducer from "./dataFormSlice";
+import productAllReducer from "./productAllSlice";
 const store = configureStore({
     reducer : {
-        apiProduct : apiProductReducer,
+        productAll : productAllReducer,
         apiCategory : apiCategoryReducer,
-        carts : cartReducer
+        carts : cartReducer,
+        dataForm : dataFormReducer,
     }
 })
 export default store;
