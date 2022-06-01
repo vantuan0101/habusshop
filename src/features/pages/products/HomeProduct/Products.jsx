@@ -10,6 +10,7 @@ import IntroProduct from '../IntroProduct/IntroProduct';
 import MenProduct from '../MenProduct/MenProduct';
 import products from './products.module.scss';
 const Products = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 
     
     return (

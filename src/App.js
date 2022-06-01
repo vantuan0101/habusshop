@@ -27,7 +27,7 @@ function App() {
         dispatch(fetchApiProductAll());
         // console.log('re-render');
     }, []);
-
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     return (
         <Routes>
             <Route path="/" element={<OutletHeader />}>

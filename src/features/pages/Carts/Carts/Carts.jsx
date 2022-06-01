@@ -17,9 +17,10 @@ const Carts = () => {
         }
     }, [carts.carts]);
 
-    const totalPrice = price?.reduce((prev, cur) => {
+    let totalPrice = price?.reduce((prev, cur) => {
         return prev + cur;
     }, 0);
+    totalPrice = Number(totalPrice.toFixed(3));
     // console.log(price);
     // console.log(totalPrice);
 
@@ -65,7 +66,7 @@ const Carts = () => {
                                     <div>{cart.quantityCount}</div>
                                     <BsFillArrowRightCircleFill onClick={() => handleIncreaseCount(index)} />
                                 </div>
-                                <div className={clsx(style.product_total)}>${cart.price * cart.quantityCount}</div>
+                                <div className={clsx(style.product_total)}>${Number((cart.price * cart.quantityCount).toFixed(3))}</div>
                                 <div className={clsx(style.product_remove)} onClick={() => handleRemoveCart(index)}>
                                     X
                                 </div>
