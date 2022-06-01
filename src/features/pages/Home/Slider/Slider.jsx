@@ -1,6 +1,5 @@
-import productApi from 'api/productsApi';
 import clsx from 'clsx';
-import React, { memo, useEffect, useState } from 'react';
+import React, { memo } from 'react';
 import Skeleton from 'react-loading-skeleton';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
