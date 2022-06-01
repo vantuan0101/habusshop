@@ -3,7 +3,7 @@ import React from "react";
 import {
   AiFillFacebook,
   AiOutlineSlack,
-  AiOutlineTwitter,
+  AiOutlineTwitter
 } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import style from "../Footer/footer.module.scss";

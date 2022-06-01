@@ -1,6 +1,5 @@
-import productApi from 'api/productsApi';
 import clsx from 'clsx';
-import React, { useEffect, useState, memo } from 'react';
+import React, { memo } from 'react';
 import { AiOutlineArrowRight } from 'react-icons/ai';
 import Skeleton from 'react-loading-skeleton';
 import { useSelector } from 'react-redux';

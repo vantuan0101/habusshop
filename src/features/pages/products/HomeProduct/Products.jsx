@@ -1,8 +1,6 @@
 import clsx from 'clsx';
-import React, { useEffect } from 'react';
+import React from 'react';
 import 'react-loading-skeleton/dist/skeleton.css';
-import { useDispatch } from 'react-redux';
-import { fetchApiCategoryList } from 'redux/apiCategorySlice';
 import BannerProduct from '../BannerProduct/BannerProduct';
 import CategoryProduct from '../CategoryProduct/CategoryProduct';
 import Feedback from '../FeedbackProduct/Feedback';

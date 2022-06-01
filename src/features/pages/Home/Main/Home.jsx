@@ -1,7 +1,5 @@
 import clsx from 'clsx';
-import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { fetchApiCategoryList } from 'redux/apiCategorySlice';
+import React from 'react';
 import Intro from '../Intro/Intro';
 import ProductReview from '../ProductPreview/ProductReview';
 import SliderProduct from '../Slider/Slider';

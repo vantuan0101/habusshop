@@ -1,8 +1,7 @@
+import { ErrorMessage } from '@hookform/error-message';
 import clsx from 'clsx';
 import React from 'react';
-import { useFormContext } from 'react-hook-form';
 import style from './input.module.scss';
-import { ErrorMessage } from '@hookform/error-message';
 const InputField = ({ label = '', type = 'text', name ,value='' ,  register ,errors}) => {
     // const {
     //     register,

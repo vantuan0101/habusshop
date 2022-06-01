@@ -1,13 +1,7 @@
-import { yupResolver } from '@hookform/resolvers/yup';
 import clsx from 'clsx';
-import React, { useState } from 'react';
-import { FormProvider, useForm } from 'react-hook-form';
-import { useSelector } from 'react-redux';
-import * as yup from 'yup';
-import style from './checkout.module.scss';
+import React from 'react';
 import FormAddress from '../FormAddress/FormAddress';
-import Payment from '../Payment/Payment';
-import ShipMethod from '../ShipMethod/ShipMethod';
+import style from './checkout.module.scss';
 
 export default function Checkout() {
     return (

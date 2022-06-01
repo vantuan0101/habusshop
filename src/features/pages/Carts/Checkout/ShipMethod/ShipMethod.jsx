@@ -1,13 +1,13 @@
+import { yupResolver } from '@hookform/resolvers/yup';
 import clsx from 'clsx';
 import InputField from 'components/form/form-control/InputField';
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import style from './method.module.scss';
 import { useForm } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup';
-import * as yup from 'yup';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { Link, useNavigate } from 'react-router-dom';
 import { addDataFrom } from 'redux/dataFormSlice';
+import * as yup from 'yup';
+import style from './method.module.scss';
 
 const schema = yup.object().shape({
     shipMethod: yup.string(),
