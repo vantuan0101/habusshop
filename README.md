@@ -7,7 +7,7 @@ https://github.com/vantuan0101/habusshop
 
 # Code By :
 - API :  I using Fake Store API at : https://fakestoreapi.com/
-- React
+- React , React Hook Form
 - Redux Toolkit 
 - SCSS 
 - Material UI
