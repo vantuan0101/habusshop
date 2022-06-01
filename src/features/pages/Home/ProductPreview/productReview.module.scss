@@ -2,6 +2,9 @@
 
 .product {
   padding: 0 15px;
+  @include desktop{
+    padding: 0 97px;
+  }
   &_container {
     display: block;
     @include md-tablet-desktop {
