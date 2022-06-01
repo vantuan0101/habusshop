@@ -10,7 +10,7 @@ import homeslider from './slider.module.scss';
 const SliderProduct = () => {
     const dataProduct = useSelector((state) => state.productAll);
     const loading = dataProduct.loading;
-    console.log(dataProduct);
+    // console.log(dataProduct);
     const newDataProduct = dataProduct.dataProduct.slice(0, 3);
     // useEffect(() => {
     //     const res = async () => {
